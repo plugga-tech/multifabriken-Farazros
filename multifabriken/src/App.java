@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class App {
     private static ArrayList<Vehicle> vehicles = new ArrayList<>();
@@ -6,6 +7,7 @@ public class App {
     private static ArrayList<Pipe> pipes = new ArrayList<>();
     private static ArrayList<OatMilk> oatMilks = new ArrayList<>();
     public static void main(String[] args) {
+        Scanner Scanner = new Scanner(System.in);
 
     }
 }
