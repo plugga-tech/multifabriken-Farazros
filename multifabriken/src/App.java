@@ -18,6 +18,7 @@ public class App {
             System.out.print("Ange ditt val: ");
             int alternativ;
 
+            //Fångar felinmatningar.
             try {
                 alternativ = scanner.nextInt();
                 scanner.nextLine();
@@ -63,13 +64,14 @@ public class App {
         String color = scanner.nextLine();
         System.out.println("Ange bilmärke:");
         String brand = scanner.nextLine();
+
         Vehicle vehicle = new Vehicle(regNumber, color, brand);
         vehicles.add(vehicle);
         System.out.println("Bil beställd: Registreringsnummer: " + vehicle.getRegNumber()
          + ", Färg: " + vehicle.getColor() + ", Bilmärke: " + vehicle.getBrand());
     }
 
-    //Beställningar.
+    //Alla beställningar.
     private static void listOrders() {
         //Beställda bilar
         System.out.println("\nLista över alla beställda bilar:");
