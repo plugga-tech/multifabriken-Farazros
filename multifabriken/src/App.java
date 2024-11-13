@@ -22,6 +22,12 @@ public class App {
                 case 2:
                     orderCandy(scanner);
                     break;
+                case 3:
+                    orderPipe(scanner);
+                    break;
+                case 4:
+                    orderOatMilk(scanner);
+                    break;
                 case 5:
                     listOrders();
                     break;
@@ -56,7 +62,7 @@ public class App {
                 return scanner.nextInt();
             }
             catch (InputMismatchException e) {
-                System.out.println("Ange ett decimaltal.");
+                System.out.println("Ange ett heltal eller decimaltal.");
                 scanner.nextLine();
             }
         }
@@ -65,10 +71,10 @@ public class App {
     //Huvudmenyn.
     private static void showMenu() {
         System.out.println("\nVälj ett alternativ:");
-        System.out.println("1. Beställa bil");
-        System.out.println("2. Beställa godis");
-        System.out.println("3. Beställa rör");
-        System.out.println("4. Beställa havremjölk");
+        System.out.println("1. Beställ en bil");
+        System.out.println("2. Beställ godis");
+        System.out.println("3. Beställ ett rör");
+        System.out.println("4. Beställ havremjölk");
         System.out.println("5. Lista dina beställningar");
         System.out.println("6. Avsluta programmet");
     }
@@ -98,6 +104,30 @@ public class App {
         products.add(new Candy(flavor, quantity));
         System.out.println("Du har beställt godis.");
     }
+
+    //Rörbeställning
+    private static void orderPipe(Scanner scanner) {
+        scanner.nextLine();
+        System.out.println("Ange diameter:");
+        double diameter = getDoubleInput(scanner);
+        System.out.println("Ange längd:");
+        double length = getDoubleInput(scanner);
+        // Lägger till i Product ArrayList
+        products.add(new Pipe(diameter, length));
+        System.out.println("Du har beställt ett rör.");
+    }    
+
+    //Havremjölksbeställning
+    private static void orderOatMilk(Scanner scanner) {
+        scanner.nextLine();
+        System.out.println("Ange fetthalt:");
+        double fat = getDoubleInput(scanner);
+        System.out.println("Ange litermängd:");
+        double liter = getDoubleInput(scanner);
+        // Lägger till i Product ArrayList
+        products.add(new OatMilk(fat, liter));
+        System.out.println("Du har beställt havremjölk.");
+    }    
 
     //Alla beställningar.
     private static void listOrders() {

@@ -9,8 +9,8 @@ public class OatMilk extends Product{
 
 	@Override
 	public void printDetails() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'printDetails'");
+        System.out.println("\nHavremjölk:");
+        System.out.println("Fetthalt: " + fat + " %");
+        System.out.println("Litermängd: " + liter + " liter");
 	}
-	
 }

@@ -11,6 +11,6 @@ public class Candy extends Product{
     public void printDetails() {
         System.out.println("\nGodis:");
         System.out.println("Smak: " + flavor);
-        System.out.println("Antal: " + quantity);
+        System.out.println("Antal: " + quantity + " st");
     }
 }

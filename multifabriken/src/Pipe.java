@@ -9,8 +9,8 @@ public class Pipe extends Product{
 
     @Override
     public void printDetails() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'printDetails'");
+        System.out.println("\nRör:");
+        System.out.println("Diameter: " + diameter + " Ø");
+        System.out.println("Längd: " + length);
     }
-
 }
