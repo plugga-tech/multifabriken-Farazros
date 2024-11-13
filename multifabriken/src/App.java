@@ -13,21 +13,14 @@ public class App {
         while (true) {
             showMenu();
             System.out.print("Ange ditt val: ");
-            int alternativ;
-
-            //Fångar felinmatningar.
-            try {
-                alternativ = scanner.nextInt();
-                scanner.nextLine();
-            } catch (InputMismatchException e) {
-                System.out.println("Ogiltigt val. Välj mellan alternativen 1-6.");
-                scanner.nextLine();
-                continue;
-            }
+            int alternativ = getIntInput(scanner);
 
             switch (alternativ) {
                 case 1:
                     orderVehicle(scanner);
+                    break;
+                case 2:
+                    orderCandy(scanner);
                     break;
                 case 5:
                     listOrders();
@@ -43,9 +36,35 @@ public class App {
         }
     }
 
+    //Metod för felinmatning vid int.
+    private static int getIntInput(Scanner scanner) {
+        while (true) {
+            try {
+                return scanner.nextInt();
+            }
+            catch (InputMismatchException e) {
+                System.out.println("Ange ett heltal.");
+                scanner.nextLine();
+            }
+        }
+    }
+
+    //Metod för felinmatning vid double.
+    private static double getDoubleInput(Scanner scanner) {
+        while (true) {
+            try {
+                return scanner.nextInt();
+            }
+            catch (InputMismatchException e) {
+                System.out.println("Ange ett decimaltal.");
+                scanner.nextLine();
+            }
+        }
+    }
+
     //Huvudmenyn.
     private static void showMenu() {
-        System.out.println("Välj ett alternativ:");
+        System.out.println("\nVälj ett alternativ:");
         System.out.println("1. Beställa bil");
         System.out.println("2. Beställa godis");
         System.out.println("3. Beställa rör");
@@ -56,6 +75,7 @@ public class App {
 
     //Bilbeställning
     private static void orderVehicle(Scanner scanner) {
+        scanner.nextLine(); //Förhindrar programmet från att ställa 2 frågor åt gången
         System.out.println("Ange bilens registreringsnummer:");
         String regNumber = scanner.nextLine();
         System.out.println("Ange bilens färg:");
@@ -65,6 +85,18 @@ public class App {
     //Lägger till i Product Arraylist
         products.add(new Vehicle(regNumber, color, brand));
         System.out.println("Du har beställt en bil.");
+    }
+
+    //Godisbeställning
+    private static void orderCandy(Scanner scanner) {
+        scanner.nextLine();
+        System.out.println("Ange smak:");
+        String flavor = scanner.nextLine();
+        System.out.println("Ange antal:");
+        int quantity = getIntInput(scanner);
+        // Lägger till i Product ArrayList
+        products.add(new Candy(flavor, quantity));
+        System.out.println("Du har beställt godis.");
     }
 
     //Alla beställningar.

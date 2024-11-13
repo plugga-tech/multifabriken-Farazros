@@ -9,9 +9,8 @@ public class Candy extends Product{
 
     @Override
     public void printDetails() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'printDetails'");
+        System.out.println("\nGodis:");
+        System.out.println("Smak: " + flavor);
+        System.out.println("Antal: " + quantity);
     }
-
-
 }

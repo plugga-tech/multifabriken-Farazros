@@ -11,7 +11,7 @@ public class Vehicle extends Product{
 
     @Override
     public void printDetails() {
-        System.out.println("Bil:");
+        System.out.println("\nBil:");
         System.out.println("Registreringsnummer: " + regNumber);
         System.out.println("Färg: " + color);
         System.out.println("Märke: " + brand);
