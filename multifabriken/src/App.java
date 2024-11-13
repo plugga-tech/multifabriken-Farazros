@@ -12,9 +12,9 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Hej, välkommen till Multifabriken!");
 
+        //Loopar huvudmenyn
         while (true) {
             showMenu();
-
             System.out.print("Ange ditt val: ");
             int alternativ;
 
@@ -57,6 +57,7 @@ public class App {
         System.out.println("6. Avsluta programmet");
     }
 
+    //Bilbeställning
     private static void orderVehicle(Scanner scanner) {
         System.out.println("Ange bilens registreringsnummer:");
         String regNumber = scanner.nextLine();
@@ -64,7 +65,7 @@ public class App {
         String color = scanner.nextLine();
         System.out.println("Ange bilmärke:");
         String brand = scanner.nextLine();
-
+    //Lägger till i Arraylist
         Vehicle vehicle = new Vehicle(regNumber, color, brand);
         vehicles.add(vehicle);
         System.out.println("Bil beställd: Registreringsnummer: " + vehicle.getRegNumber()
