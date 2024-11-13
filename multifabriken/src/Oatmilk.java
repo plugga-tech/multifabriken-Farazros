@@ -1,4 +1,4 @@
-public class OatMilk {
+public class OatMilk extends Product{
 	private double fat;
 	private double liter;
 	
@@ -6,12 +6,11 @@ public class OatMilk {
 		this.fat = fat;
 		this.liter = liter;
 	}
-	
-	public double getFat() {
-		return fat;
+
+	@Override
+	public void printDetails() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'printDetails'");
 	}
 	
-	public double getLiter() {
-		return liter;
-	}
 }

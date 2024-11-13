@@ -1,4 +1,4 @@
-public class Vehicle {
+public class Vehicle extends Product{
     private String regNumber;
     private String color;
     private String brand;
@@ -9,15 +9,11 @@ public class Vehicle {
         this.brand = brand;
     }
 
-    public String getRegNumber() {
-        return regNumber;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public String getBrand() {
-        return brand;
+    @Override
+    public void printDetails() {
+        System.out.println("Bil:");
+        System.out.println("Registreringsnummer: " + regNumber);
+        System.out.println("Färg: " + color);
+        System.out.println("Märke: " + brand);
     }
 }

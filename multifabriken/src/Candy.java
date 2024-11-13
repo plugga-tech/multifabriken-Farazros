@@ -1,4 +1,4 @@
-public class Candy {
+public class Candy extends Product{
     private String flavor;
     private int quantity;
 
@@ -7,11 +7,11 @@ public class Candy {
         this.quantity = quantity;
     }
 
-    public String getFlavor() {
-        return flavor;
+    @Override
+    public void printDetails() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'printDetails'");
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
+
 }

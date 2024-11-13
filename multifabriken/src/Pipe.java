@@ -1,4 +1,4 @@
-public class Pipe {
+public class Pipe extends Product{
     private double diameter;
     private double length;
 
@@ -7,11 +7,10 @@ public class Pipe {
     this.length = length;
 }
 
-    public double getDiameter() {
-        return diameter;
+    @Override
+    public void printDetails() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'printDetails'");
     }
 
-    public double getLength() {
-        return length;
-    }
 }

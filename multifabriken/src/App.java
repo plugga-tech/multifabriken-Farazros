@@ -3,10 +3,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
-    private static ArrayList<Vehicle> vehicles = new ArrayList<>();
-    private static ArrayList<Candy> candies = new ArrayList<>();
-    private static ArrayList<Pipe> pipes = new ArrayList<>();
-    private static ArrayList<OatMilk> oatMilks = new ArrayList<>();
+    private static ArrayList<Product> products = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -65,21 +62,16 @@ public class App {
         String color = scanner.nextLine();
         System.out.println("Ange bilmärke:");
         String brand = scanner.nextLine();
-    //Lägger till i Arraylist
-        Vehicle vehicle = new Vehicle(regNumber, color, brand);
-        vehicles.add(vehicle);
-        System.out.println("Bil beställd: Registreringsnummer: " + vehicle.getRegNumber()
-         + ", Färg: " + vehicle.getColor() + ", Bilmärke: " + vehicle.getBrand());
+    //Lägger till i Product Arraylist
+        products.add(new Vehicle(regNumber, color, brand));
+        System.out.println("Du har beställt en bil.");
     }
 
     //Alla beställningar.
     private static void listOrders() {
-        //Beställda bilar
-        System.out.println("\nLista över alla beställda bilar:");
-        for (Vehicle vehicle : vehicles) {
-            System.out.println("Registreringsnummer: " + vehicle.getRegNumber() 
-            + ", Färg: " + vehicle.getColor() 
-            + ", Bilmärke: " + vehicle.getBrand());
+        System.out.println("\nLista över alla beställningar:");
+        for (Product products : products) {
+            products.printDetails();
         }
     }
 }
